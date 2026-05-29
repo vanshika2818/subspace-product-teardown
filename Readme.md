@@ -82,7 +82,7 @@ To make sure we balance developer hours with actual business revenue, I have ran
 * **(c) Ship Instead:** **Opt-In On-Device SMS/Email Parsing Flow.** Build a secure, privacy-first on-device text-parsing script during user signup. Instead of relying purely on deep banking API linkages, this script safely processes local invoice receipts and bank debit alerts right on the user's device, mapping out hidden local recurring payments instantly without making the user type details manually.
 * **🎯 Key Metric Target:** Activation Completion Rate.
 * **💸 Indian Regulatory Context & Trade-off:** Since the RBI has heavily tightened rules around credit card auto-debits and bank e-mandates in India, automated payment failures are at an all-time high. Users need tracking now more than ever. However, asking for SMS access during onboarding creates massive privacy friction. If the transparency micro-copy isn't perfectly clear that data is stored *locally*, it will cause immediate user drop-off at registration.
-  
+   
 ---
 
 ### 4. Competitor Analysis: Network Effects vs. Churn
