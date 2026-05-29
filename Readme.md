@@ -42,40 +42,55 @@ To balance engineering velocity against business value, the proposed interventio
 * **(b) Problem:** **The Trust Deficit.** The current system relies on a peer-to-peer trust architecture where a single group admin controls the account credentials. If the admin defaults, changes the password, or stops paying, the remaining group members lose their capital. This financial insecurity drives high user churn and caps the platform's top-of-funnel conversion.
 * **(c) Ship Instead:** **Smart Escrow & Subspace-Led Billing.** Subspace must act as the central escrow clearinghouse for public groups. Instead of members paying the admin directly, Subspace collects individual shares securely, moves them into an internal escrow, and directly clears the subscription fee with the vendor. 
 * **⚠️ The Trade-off:** This introduces increased compliance and legal overhead. Transitioning from simple peer-to-peer coordination to an escrow-like collection model may subject Subspace to tighter regulatory scrutiny under RBI payment aggregator guidelines, increasing initial time-to-market.
-* *[Visual Asset: See `assets/public_group_friction.png`]*
+* **📸 Live Product Evidence:**
+  * **Screen to capture:** Open any active public plan detail page (e.g., Netflix Premium Plan group detail screen showing the host/admin and payment action button).
+  * **File Placement:** `assets/public_group_friction.png`
+  * ![Public Group Trust Friction](assets/public_group_friction.png)
 
 ---
 
 ### 2. Feature: Hyper-Local Subscription Discovery
-* **(a) Observed:** The platform positions itself as India's first subscription marketplace for local providers[cite: 1].
-* **(b) Problem:** **Discovery Cold Start.** While digital gift cards and major streaming services are prominently displayed[cite: 1], local utility, gym, internet, and regional newspaper providers are buried or non-existent depending on the user's geo-location, diluting the "local marketplace" product promise.
-* **(c) Ship Instead:** **Geo-Fenced "Near Me" Subscription Feeds.** Implement a location-aware onboarding feed that utilizes device GPS to instantly surface hyper-local internet service providers (ISPs), local gym chains, and neighborhood water-delivery subscriptions right on the home dashboard.
-* **⚠️ The Trade-off:** Operational complexity. Unlike digital OTT services that scale universally via API integrations, local offline providers are highly fragmented. Onboarding them requires regional operations, which challenges the scalability of Subspace's lean, AI-native operational model[cite: 1].
-* *[Visual Asset: See `assets/local_discovery_mockup.png`]*
+* **(a) Observed:** The platform markets itself as India's first subscription marketplace for local providers[cite: 1]. However, auditing the live catalog directory displays an inventory exclusively made up of global/national digital applications: OTT platforms (Netflix, YouTube Premium, Prime Video, Zee5, Discovery Plus), AI tools (ChatGPT Plus, Perplexity Pro, Google Gemini Pro), and digital services (Canva Pro, Grammarly, NordVPN)[cite: 1]. Everyday hyper-local or regional subscriptions—such as regional cable/broadband providers (Siti Cable, local ISPs), offline gyms, or regional daily physical publications—are entirely missing.
+* **(b) Problem:** **The Marketing vs. Product Reality Gap.** Without actual offline local utilities, Subspace cannot access high-retention, non-discretionary recurring household bills. Users interact with the platform purely as a discount-seeking destination for transactional entertainment plans, capping customer lifetime value (LTV).
+* **(c) Ship Instead:** **Geo-Fenced "Near Me" Subscription Feeds & BBPS Node Linking.** Implement a location-aware onboarding feed that utilizes device GPS to instantly surface hyper-local internet service providers (ISPs like ACT Fibernet, Hathway, Siti Cable) or utility billing options via Bharat Bill Payment System (BBPS) integration.
+* **⚠️ The Trade-off:** Operational complexity. Scaling fragmented local offline providers requires localized merchant onboarding and validation operations, challenging the scalability of Subspace's lean, 90%+ AI-native operating model[cite: 1].
+* **📸 Live Product Evidence:**
+  * **Screen to capture:** Take a screenshot of the main marketplace exploration screen showing the absolute dominance of purely digital apps (Netflix, Canva, ChatGPT, etc.)[cite: 1].
+  * **File Placement:** `assets/local_discovery_mockup.png`
+  * ![Marketplace Digital Dominance Evidence](assets/local_discovery_mockup.png)
 
 ---
 
 ### 3. UX: Subscription Auto-Detection Friction
 * **(a) Observed:** The platform utilizes APIs to auto-detect and categorize recurring user payments[cite: 1].
-* **(b) Problem:** **The Hidden Long-Tail.** Traditional financial APIs easily catch fixed, large-vendor digital transactions (e.g., Netflix, Spotify), but regularly miss long-tail recurring costs like local gym fees, niche newsletters, or SaaS add-ons. This forces users into manual logs, increasing product drop-off.
-* **(c) Ship Instead:** **Opt-In SMS/Email Parsing Flow.** Introduce a secure, on-device SMS/Email parsing consent flow during onboarding. This agent reads digital invoice receipts and automated bank SMS alerts to instantly build a comprehensive subscription dashboard, requiring zero manual entry.
-* **⚠️ The Trade-off:** Privacy-conscious user friction. Cost-sensitive Indian consumers are highly protective of message and email permissions. Requesting these access rights during onboarding can cause an immediate drop-off in sign-up conversions if the trust micro-copy is not perfectly optimized.
-* *[Visual Asset: See `assets/onboarding_parsing_flow.png`]*
+* **(b) Problem:** **The Hidden Long-Tail.** Standard banking and aggregator APIs catch fixed, clear merchant IDs (e.g., `UPI-NETFLIX@okaxis`), but regularly miss long-tail recurring local utility charges or SaaS add-ons that run as personal generic P2P transfers (e.g., `UPI-RAMESH-8921@okicici`). This blind spot forces users into tedious manual bookkeeping entry fields, accelerating app exit and drop-off.
+* **(c) Ship Instead:** **Opt-In SMS/Email Parsing Flow.** Introduce a secure, on-device local text-parsing consent flow during onboarding. This localized engine scans digital invoice receipts and bank SMS alerts to instantly map both big brands and unstructured local recurring transactions into a single dashboard with zero manual typing required.
+* **⚠️ The Trade-off:** Privacy-conscious user friction. Indian consumers are protective of device message permissions. Requesting these access rights during onboarding can cause an immediate drop-off in registration conversion if the transparency copy is not fully optimized.
+* **📸 Live Product Evidence:**
+  * **Screen to capture:** Take a side-by-side comparison screen. **Left:** A screenshot of Subspace's manual "Add Custom Subscription" page showing empty input fields. **Right:** A screenshot from your own phone message inbox showing a generic bank debit SMS text for a local service payment with personal details blacked out/blurred.
+  * **File Placement:** `assets/onboarding_parsing_flow.png`
+  * ![Manual Entry vs SMS Evidence](assets/onboarding_parsing_flow.png)
 
 ---
 
 ### 4. Competitor Analysis: Network Effects vs. Churn
-* **(a) Observed:** Subspace relies on network effects where group sharing becomes stickier as the user base expands[cite: 1].
-* **(b) Problem:** **Subscription Seasonality.** Entertainment and streaming subscriptions are highly transactional; users frequently rotate and cancel services when a specific show ends. Building a network effect on volatile, low-retention assets creates an unstable user lifetime value (LTV).
-* **(c) Ship Instead:** **Private Group Utility Bundling.** Actively incentivize users to create closed "Private Groups" with verified real-world contacts (roommates, family) specifically for high-retention bills (e.g., Wi-Fi, electricity, rent). Reward these high-trust cohorts with milestone-based discount tiers on discretionary entertainment add-ons.
-* **(d) The Trade-off:** Slower initial viral loops. Private groups require real-world relationships, which limits the immediate, frictionless growth seen when users jump into anonymous public groups. This trades rapid user acquisition for long-term cohort retention.
-* *[Visual Asset: See `assets/utility_bundling_ui.png`]*
+* **(a) Observed:** Subspace relies heavily on group sharing network effects where a user's subscription becomes stickier as more members participate[cite: 1].
+* **(b) Problem:** **Subscription Seasonality Churn.** Entertainment subscriptions are inherently seasonal and low-retention; users cancel their split groups immediately once a specific show ends. Relying on volatile entertainment shares undermines the long-term compounding stability of a core fintech app.
+* **(c) Ship Instead:** **Private Group Utility Bundling & Trust Tiers.** Actively incentivize users to form private, high-retention groups with verified real-world roommates/family specifically for necessary recurring bills (Wi-Fi, electricity, house rent splits). Reward these consistent monthly utility groups with trust points that unlock discounts on cyclical entertainment add-ons.
+* **(d) The Trade-off:** Slower initial growth loops. High-trust private groups depend on real-world relationships, which limits immediate viral scaling compared to the frictionless nature of letting strangers immediately merge into anonymous public pools.
+* **📸 Live Product Evidence:**
+  * **Screen to capture:** A screenshot of any standard live public plan listing (e.g., YouTube Premium Monthly Plan or Netflix Standard Plan showing short-term indicators like "1 months", "Split 3 ways" or "Groups 21+")[cite: 1].
+  * **File Placement:** `assets/utility_bundling_ui.png`
+  * ![Group Transactional Nature Evidence](assets/utility_bundling_ui.png)
 
 ---
 
 ### 5. Potential Collaborations: The Student Cohort Ecosystem
-* **(a) Observed:** The platform's primary value proposition addresses cost-conscious demographics managing group finances and bill splitting[cite: 1].
-* **(b) Problem:** **High Customer Acquisition Cost (CAC).** Targeting and acquiring these price-sensitive consumers individually via traditional performance marketing channels rapidly burns through bootstrapping margins.
-* **(c) Ship Instead:** **Co-Branded University Living Integrations.** Form strategic partnerships with institutional student housing networks (e.g., Stanza Living, Zolostays) and co-living operators. Embed Subspace as the pre-integrated, default software layer for managing room expenses, shared Wi-Fi bills, and communal streaming access for student cohorts moving into new apartments.
-* **⚠️ The Trade-off:** Extended B2B sales cycles. Securing institutional corporate partnerships demands significant upfront business development, legal verification, and customized integration timelines, which delays immediate product deployment compared to direct-to-consumer digital marketing campaigns.
-* *[Visual Asset: See `assets/student_ecosystem_partnership.png`]*
+* **(a) Observed:** The platform's core target market relies on cost-conscious users actively managing bill splitting and group finance architectures[cite: 1].
+* **(b) Problem:** **High Direct-to-Consumer (D2C) Customer Acquisition Costs (CAC).** Relying on fragmented performance marketing or standard app store ads to acquire single price-sensitive users one-by-one rapidly deteriorates bootstrapping margins.
+* **(c) Ship Instead:** **Co-Branded University Living Alliances (B2B2C).** Secure institutional programmatic partnerships with student housing and co-living aggregators (e.g., Stanza Living, Zolostays). Pre-integrate Subspace into their resident onboarding application as the default software layer for automatically managing shared room expenses, common-area electricity meters, and combined Wi-Fi accounts.
+* **⚠️ The Trade-off:** Extended corporate sales cycles. Negotiating agreements with large-scale student housing providers introduces legal reviews and custom technical alignment timelines, delaying immediate market deployment relative to instant digital performance marketing campaigns.
+* **📸 Live Product Evidence:**
+  * **Screen to capture:** Take a screenshot of the current generic "Refer & Earn" screen or promotional/bonus banners located on the profile dashboard or main banner feed of the app.
+  * **File Placement:** `assets/student_ecosystem_partnership.png`
+  * ![D2C Growth Banner Evidence](assets/student_ecosystem_partnership.png)
