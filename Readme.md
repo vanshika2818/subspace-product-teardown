@@ -60,7 +60,8 @@ To make sure we balance developer hours with actual business revenue, I have ran
 * **(c) Ship Instead:** **Smart Escrow & Subspace-Led Billing.** Subspace should step in as an automated escrow layer for public groups. Instead of members transferring money directly to a stranger's wallet, everyone pays Subspace securely. Subspace holds the funds, and its backend AI agent pays the subscription vendor directly. 
 * **🎯 Key Metric Target:** Month-on-Month (MoM) Group Retention Rate.
 * **⚠️ The Trade-off:** This will increase compliance work. Moving from peer-to-peer split coordination to holding direct user funds means Subspace might fall under stricter RBI payment aggregator regulations, which could slow down deployment speed.
-* **📸 Live Product Evidence:** See file `assets/public_group_friction.png`
+* **📸 Live Product Evidence:**
+* * ![Public Group Trust Friction](assets/public_group_friction.png)
 
 ---
 
@@ -70,7 +71,8 @@ To make sure we balance developer hours with actual business revenue, I have ran
 * **(c) Ship Instead:** **Geo-Fenced "Near Me" Subscription Feeds.** Use the phone's GPS data during onboarding to instantly push hyper-local internet service providers (ISPs) or physical gym memberships operating in that specific pincode right onto the home feed. We can link these payouts directly by plugging into the Bharat Bill Payment System (BBPS) utility nodes.
 * **🎯 Key Metric Target:** Customer Lifetime Value (LTV) Extension.
 * **⚠️ The Trade-off:** High operational and sales friction. Digital apps can be integrated universally using a single API. Onboarding highly fragmented local offline providers requires manual ground coordination, which challenges the scalability of Subspace's hyper-lean, AI-native operational model.
-* **📸 Live Product Evidence:** See file `assets/local_discovery_mockup.png`
+* **📸 Live Product Evidence:**
+* ![Marketplace Digital Dominance Evidence](assets/local_discovery_mockup.png)
 
 ---
 
@@ -89,7 +91,8 @@ To make sure we balance developer hours with actual business revenue, I have ran
 * **(c) Ship Instead:** **Private Group Utility Bundling & Trust Scores.** Shift the product's primary focus from public stranger groups toward creating closed "Private Groups" among real-world roommates, family, and friends for non-discretionary bills (Wi-Fi, electricity, flat rent splits). Introduce a "Group Trust Score"—roommate cohorts who clear their shared utility bills on time for 3 consecutive months unlock exclusive discount tiers on the cyclical entertainment add-ons.
 * **🎯 Key Metric Target:** Month-3 (M3) Cohort Retention.
 * **⚠️ The Trade-off:** Slower initial viral growth. Setting up verified private groups with real friends takes actual real-world effort and coordination, which is a slower growth loop compared to letting random strangers click a button and merge into public groups instantly.
-* **📸 Live Product Evidence:** See file `assets/utility_bundling_ui.png`
+* **📸 Live Product Evidence:**
+* ![Group Transactional Nature Evidence](assets/utility_bundling_ui.png)
 
 ---
 
@@ -99,4 +102,5 @@ To make sure we balance developer hours with actual business revenue, I have ran
 * **(c) Ship Instead:** **Co-Branded University Living Alliances (B2B2C).** Secure programmatic partnerships with large-scale student housing and co-living aggregators (e.g., Stanza Living, Zolostays). Embed Subspace directly into their resident onboarding applications as the pre-integrated, default tool to automatically split and manage shared flat room rents, room electricity meters, and communal Wi-Fi accounts.
 * **🎯 Key Metric Target:** Customer Acquisition Cost (CAC) Reduction.
 * **⚠️ The Trade-off:** Extended B2B sales cycles. Negotiating deals with institutional student housing corporations requires multiple management meetings, customized legal contracts, and long engineering integration syncs, which takes months compared to launching an instant online marketing campaign.
-* **📸 Live Product Evidence:** See file `assets/student_ecosystem_partnership.png`
+* **📸 Live Product Evidence:**
+* ![D2C Growth Banner Evidence](assets/student_ecosystem_partnership.png)
