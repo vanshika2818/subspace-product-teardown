@@ -52,6 +52,8 @@ To make sure we balance developer effort with actual business impact, I have ran
 * **(b) Problem:** **The Product vs. Marketing Gap.** Without local utilities, Subspace misses out on essential, non-discretionary recurring bills. Users view the app purely as a place to find cheap movie streaming. Once a popular show ends, they stop using the app, causing high seasonal churn.
 * **(c) Ship Instead:** **Location-Based "Near Me" Subscription Feeds.** Use the phone's GPS during onboarding to instantly surface hyper-local internet providers (ISPs) or gym memberships operating in that specific pincode. We can link these directly using existing Bharat Bill Payment System (BBPS) billing nodes.
 * **⚠️ The Trade-off:** Operational complexity. Digital apps can be integrated instantly via universal APIs. Fragmented local providers require actual field sales and onboarding effort, which temporarily challenges Subspace's lean, highly automated business model.
+  * **File Placement:** `assets/local_discovery_mockup.png`
+  * ![Marketplace Digital Dominance Evidence](assets/local_discovery_mockup.png)
 ---
 
 ### 3. UX: Subscription Auto-Detection Friction
@@ -59,9 +61,6 @@ To make sure we balance developer effort with actual business impact, I have ran
 * **(b) Problem:** **Missed Transactions.** Standard banking APIs can easily read well-known merchant labels (like `UPI-NETFLIX@okaxis`). However, they completely miss long-tail local payments—like a payment to a local gym owner or a neighborhood broadband provider—because they look like personal P2P bank transfers (e.g., `UPI-RAMESH-8921@okicici`). This means users have to type their subscriptions manually, creating a boring data-entry flow that makes people close the app.
 * **(c) Ship Instead:** **Opt-In SMS/Email Parsing Flow.** Build a secure, on-device text-parsing reader during signup. This script securely reads local digital invoices and automated bank debit alerts right on the user's phone, mapping out both big brands and hidden local payments instantly without making the user type a single word.
 * **⚠️ The Trade-off:** High privacy sensitivity. Indian consumers are protective of their message and notification permissions. Asking for SMS access during the first 2 minutes of onboarding can cause a sharp drop-off in signups if the explanation text isn't perfectly transparent.
- * **File Placement:** `assets/onboarding_parsing_flow.png`
-  * ![Manual Entry vs SMS Evidence](assets/onboarding_parsing_flow.png)
-
 ---
 
 ### 4. Competitor Analysis: Network Effects vs. Churn
